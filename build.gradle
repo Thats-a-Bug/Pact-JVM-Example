@@ -32,6 +32,8 @@ subprojects {
       testImplementation("junit:junit")
       testImplementation("au.com.dius:pact-jvm-consumer-junit:4.0.3")
       testImplementation("au.com.dius:pact-jvm-consumer-java8:4.0.3")
+      compileOnly 'org.projectlombok:lombok:1.18.10'
+      annotationProcessor 'org.projectlombok:lombok:1.18.10'
   }
 
 }

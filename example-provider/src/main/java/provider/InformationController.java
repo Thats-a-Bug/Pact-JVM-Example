@@ -19,10 +19,8 @@ public class InformationController {
             contact.put("Email", "spongebob@squarepants.com");
             contact.put("Phone Number", "9090950");
             information.setSkills("Complex Quantum-Physis; Cooking; Philanthropy");
-            information.setNationality(Nationality.getNationality());
             information.setContact(contact);
             information.setName("SpongeBob SquarePants PhD");
-            information.setSalary(45000);
 
         } else if (name.equals("Nanoha")) {
             information.setAge("24");
@@ -31,10 +29,8 @@ public class InformationController {
 
         } else {
             information.setSkills("Complex Qusantum-Physis; Cooking; Philanthropy");
-            information.setNationality(Nationality.getNationality());
             information.setContact(null);
             information.setName(name);
-            information.setSalary(0);
         }
 
         return information;
