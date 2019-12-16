@@ -683,7 +683,7 @@ In our example Provider, the returned payload for both Miku and Nanoha have a pr
 of properties values, in real project, could always be queried from database or dependency service, but in this 
 example, to simplify the Provider application logic, I just create a static property to simulate the data storage:
 
-`provider.ulti.Nationality`
+`provider.util.Nationality`
 
 ```java
 public class Nationality {

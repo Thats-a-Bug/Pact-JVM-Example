@@ -1,4 +1,4 @@
-package ariman.pact.consumer;
+package pact.consumer;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -6,14 +6,14 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class ProviderService {
 
-    private String backendURL = "http://localhost:8080/information?name=Linkedin";
+    private String backendURL = "http://localhost:8080/information?name=facebook";
 
     public String getBackendURL() {
         return this.backendURL;
     }
 
     public void setBackendURL(String URLBase) {
-        this.backendURL = URLBase+"/information?name=Linkedin";
+        this.backendURL = URLBase+"/information?name=facebook";
     }
     public void setBackendURL(String URLBase, String name) {
         this.backendURL = URLBase+"/information?name="+name;

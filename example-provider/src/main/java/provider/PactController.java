@@ -2,7 +2,7 @@ package provider;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.*;
-import provider.ulti.Nationality;
+import provider.util.Nationality;
 
 @Profile("pact")
 @RestController

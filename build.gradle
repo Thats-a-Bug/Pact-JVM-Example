@@ -34,6 +34,8 @@ subprojects {
       testImplementation("au.com.dius:pact-jvm-consumer-java8:4.0.3")
       compileOnly 'org.projectlombok:lombok:1.18.10'
       annotationProcessor 'org.projectlombok:lombok:1.18.10'
+      compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1.1'
+      testCompile group: 'io.rest-assured', name: 'rest-assured', version: '4.1.2'
   }
 
 }
@@ -93,14 +95,12 @@ project(':example-provider') {
                 path = '/'
 
                 // Test Pacts from local linkedin
-
-                // TODO - Update to Linkedin
                 hasPactsWith('LinkedIn - All contracts') {
-                    pactFileLocation = file("$rootDir/Pacts/Miku")
+                    pactFileLocation = file("$rootDir/Pacts/linkedin")
                 }
 
                 hasPactsWith('Facebook - All contracts') {
-                    pactFileLocation = file("$rootDir/Pacts/Miku")
+                    pactFileLocation = file("$rootDir/Pacts/facebook")
                 }
 
             }

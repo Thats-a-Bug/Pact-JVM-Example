@@ -1,4 +1,4 @@
-package ariman.pact.consumer;
+package pact.consumer;
 
 import lombok.Getter;
 import lombok.Setter;
