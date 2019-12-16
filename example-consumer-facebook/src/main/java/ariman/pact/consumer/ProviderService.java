@@ -6,14 +6,14 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class ProviderService {
 
-    private String backendURL = "http://localhost:8080/information?name=Miku";
+    private String backendURL = "http://localhost:8080/information?name=facebook";
 
     public String getBackendURL() {
         return this.backendURL;
     }
 
     public void setBackendURL(String URLBase) {
-        this.backendURL = URLBase+"/information?name=Miku";
+        this.backendURL = URLBase+"/information?name=facebook";
     }
     public void setBackendURL(String URLBase, String name) {
         this.backendURL = URLBase+"/information?name="+name;
@@ -21,8 +21,7 @@ public class ProviderService {
 
     public Information getInformation() {
         RestTemplate restTemplate = new RestTemplate();
-        Information information = restTemplate.getForObject(getBackendURL(), Information.class);
 
-        return information;
+        return restTemplate.getForObject(getBackendURL(), Information.class);
     }
 }

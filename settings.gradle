@@ -1,2 +1,2 @@
-include "example-consumer-miku", "example-consumer-nanoha", "example-provider"
+include "example-consumer-linkedin", "example-consumer-facebook", "example-provider"
 

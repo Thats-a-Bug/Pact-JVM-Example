@@ -1,13 +1,8 @@
 package provider;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class PactState {
-    private String state;
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
+    @Getter @Setter private String state;
 }

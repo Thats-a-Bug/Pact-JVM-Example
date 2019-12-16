@@ -11,15 +11,15 @@ public class InformationController {
     @Autowired
     private ProviderService providerService;
 
-    @RequestMapping("/miku")
-    public String miku(Model model) {
+    @RequestMapping("/linkedin")
+    public String linkedin(Model model) {
         Information information = providerService.getInformation();
         model.addAttribute("skills", information.getSkills());
         model.addAttribute("name", information.getName());
         model.addAttribute("mail", information.getContact().get("Email"));
         model.addAttribute("phone", information.getContact().get("Phone Number"));
 
-        return "miku";
+        return "linkedin";
     }
 
 }

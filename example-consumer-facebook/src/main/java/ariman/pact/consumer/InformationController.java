@@ -11,14 +11,14 @@ public class InformationController {
     @Autowired
     private ProviderService providerService;
 
-    @RequestMapping("/nanoha")
-    public String miku(Model model) {
+    @RequestMapping("/facebook")
+    public String facebook(Model model) {
         Information information = providerService.getInformation();
         model.addAttribute("name", information.getName());
         model.addAttribute("age", information.getAge());
         model.addAttribute("relatives", information.getRelatives());
 
-        return "nanoha";
+        return "facebook";
     }
 
 }
