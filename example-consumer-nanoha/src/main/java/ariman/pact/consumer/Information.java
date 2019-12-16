@@ -1,21 +1,9 @@
 package ariman.pact.consumer;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Information {
-    private Integer salary;
     private String name;
-    private String nationality;
-    private Map<String, String> contact = new HashMap<String, String>();
-
-    public Integer getSalary() {
-        return salary;
-    }
-
-    public void setSalary(Integer salary) {
-        this.salary = salary;
-    }
+    private String relatives;
+    private String age;
 
     public String getName() {
         return name;
@@ -25,19 +13,19 @@ public class Information {
         this.name = name;
     }
 
-    public Map<String, String> getContact() {
-        return contact;
+    public String getRelatives() {
+        return relatives;
     }
 
-    public void setContact(Map<String, String> contact) {
-        this.contact = contact;
+    public void setRelatives(String relatives) {
+        this.relatives = relatives;
     }
 
-    public String getNationality() {
-        return nationality;
+    public String getAge() {
+        return age;
     }
 
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
+    public void setAge(String age) {
+        this.age = age;
     }
 }

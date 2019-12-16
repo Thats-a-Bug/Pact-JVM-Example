@@ -25,28 +25,16 @@
 
         <div class="cover-container">
 
-            <header class="masthead clearfix">
-                <div class="inner">
-                    <h4 class="masthead-brand">Ariman</h4>
-                    <nav class="nav nav-masthead">
-                        <a class="nav-link active" href="#">Home</a>
-                        <a class="nav-link" href="#">Characteristics</a>
-                        <a class="nav-link" href="#">Cultural</a>
-                    </nav>
-                </div>
-            </header>
-
             <main role="main" class="inner cover">
                 <div class="row">
                     <div class="col-md-5">
-                        <img src="img/nanoha.png">
+                        <img src="img/facebook.png">
                     </div>
 
-                    <div class="col-md-7" style="margin-top: 5%; text-align: left;">
+                    <div class="col-md-8" style="margin-top: 5%; text-align: left;">
                         <h1 class="cover-heading" th:text="${name}"/>
-                        <p class="lead" th:text="'Nationality: '+${nationality}"/>
-                        <p class="lead" th:text="'Email: '+${mail}"/>
-                        <p class="lead" th:text="'Phone: '+${phone}"/>
+                        <p class="lead" th:text="'Age: '+${age}"/>
+                        <p class="lead" th:text="'Relatives: '+${relatives}"/>
                     </div>
                 </div>
             </main>

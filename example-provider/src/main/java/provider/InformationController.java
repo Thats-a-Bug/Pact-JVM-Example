@@ -25,17 +25,12 @@ public class InformationController {
             information.setSalary(45000);
 
         } else if (name.equals("Nanoha")) {
-            HashMap contact = new HashMap<String, String>();
-            contact.put("Email", "takamachi.nanoha@ariman.com");
-            contact.put("Phone Number", "9090940");
-            information.setSkills("Complex Quantum-Physis; Cooking; Philanthropy");
-            information.setNationality(Nationality.getNationality());
-            information.setContact(contact);
-            information.setName("Takamachi Nanoha");
-            information.setSalary(80000);
+            information.setAge("24");
+            information.setRelatives("Harold SquarePants; Margaret SquarePants");
+            information.setName("SpongeBob SquarePants");
 
         } else {
-            information.setSkills("Complex Quantum-Physis; Cooking; Philanthropy");
+            information.setSkills("Complex Qusantum-Physis; Cooking; Philanthropy");
             information.setNationality(Nationality.getNationality());
             information.setContact(null);
             information.setName(name);

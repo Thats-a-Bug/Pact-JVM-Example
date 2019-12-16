@@ -1,8 +1,5 @@
 package provider;
 
-import java.util.List;
-import provider.ulti.Nationality;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,6 +11,8 @@ public class Information {
     private String nationality;
     private String skills;
     private Map<String, String> contact = new HashMap<String, String>();
+    private String age;
+    private String relatives;
 
     public void setSkills(String skills) { this.skills = skills; }
 
@@ -50,4 +49,21 @@ public class Information {
     public void setNationality(String nationality) {
         this.nationality = nationality;
     }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setRelatives(String relatives) {
+        this.relatives = relatives;
+    }
+
+    public String getRelatives() {
+        return relatives;
+    }
+
 }

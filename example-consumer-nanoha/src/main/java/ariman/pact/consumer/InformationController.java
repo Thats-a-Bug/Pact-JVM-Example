@@ -15,9 +15,8 @@ public class InformationController {
     public String miku(Model model) {
         Information information = providerService.getInformation();
         model.addAttribute("name", information.getName());
-        model.addAttribute("nationality", information.getNationality());
-        model.addAttribute("mail", information.getContact().get("Email"));
-        model.addAttribute("phone", information.getContact().get("Phone Number"));
+        model.addAttribute("age", information.getAge());
+        model.addAttribute("relatives", information.getRelatives());
 
         return "nanoha";
     }
