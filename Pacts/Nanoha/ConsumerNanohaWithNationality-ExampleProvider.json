@@ -1,0 +1,88 @@
+{
+  "provider": {
+    "name": "ExampleProvider"
+  },
+  "consumer": {
+    "name": "ConsumerNanohaWithNationality"
+  },
+  "interactions": [
+    {
+      "description": "Query name is Nanoha",
+      "request": {
+        "method": "GET",
+        "path": "/information",
+        "query": {
+          "name": [
+            "Nanoha"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json;charset\u003dUTF-8"
+        },
+        "body": {
+          "nationality": "Japan",
+          "contact": {
+            "Email": "takamachi.nanoha@ariman.com",
+            "Phone Number": "9090940"
+          },
+          "name": "Takamachi Nanoha",
+          "salary": 100
+        },
+        "matchingRules": {
+          "body": {
+            "$.salary": {
+              "matchers": [
+                {
+                  "match": "number"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.contact.Email": {
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": ".*@ariman.com"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.contact[\u0027Phone Number\u0027]": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        },
+        "generators": {
+          "body": {
+            "$.salary": {
+              "type": "RandomInt",
+              "min": 0,
+              "max": 2147483647
+            }
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.0.3"
+    }
+  }
+}

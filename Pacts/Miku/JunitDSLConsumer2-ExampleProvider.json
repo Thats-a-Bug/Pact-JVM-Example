@@ -1,0 +1,50 @@
+{
+  "provider": {
+    "name": "ExampleProvider"
+  },
+  "consumer": {
+    "name": "JunitDSLConsumer2"
+  },
+  "interactions": [
+    {
+      "description": "Query name is Nanoha",
+      "request": {
+        "method": "GET",
+        "path": "/information",
+        "query": {
+          "name": [
+            "Nanoha"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json;charset\u003dUTF-8"
+        },
+        "body": {
+          "salary": 80000,
+          "name": "Takamachi Nanoha",
+          "nationality": "Japan",
+          "contact": {
+            "Email": "takamachi.nanoha@ariman.com",
+            "Phone Number": "9090940"
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.0.3"
+    }
+  }
+}

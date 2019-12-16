@@ -1,15 +1,23 @@
 package provider;
 
+import java.util.List;
 import provider.ulti.Nationality;
 
 import java.util.HashMap;
 import java.util.Map;
 
+// TODO - Lombok
 public class Information {
+
     private Integer salary;
     private String name;
     private String nationality;
+    private String skills;
     private Map<String, String> contact = new HashMap<String, String>();
+
+    public void setSkills(String skills) { this.skills = skills; }
+
+    public String getSkills() { return this.skills; }
 
     public Integer getSalary() {
         return salary;

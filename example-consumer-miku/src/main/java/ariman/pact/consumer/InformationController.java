@@ -14,6 +14,7 @@ public class InformationController {
     @RequestMapping("/miku")
     public String miku(Model model) {
         Information information = providerService.getInformation();
+        model.addAttribute("skills", information.getSkills());
         model.addAttribute("name", information.getName());
         model.addAttribute("mail", information.getContact().get("Email"));
         model.addAttribute("phone", information.getContact().get("Phone Number"));

@@ -25,37 +25,20 @@
 
         <div class="cover-container">
 
-            <header class="masthead clearfix">
-                <div class="inner">
-                    <h4 class="masthead-brand">Ariman</h4>
-                    <nav class="nav nav-masthead">
-                        <a class="nav-link active" href="#">Home</a>
-                        <a class="nav-link" href="#">Characteristics</a>
-                        <a class="nav-link" href="#">Cultural</a>
-                    </nav>
-                </div>
-            </header>
-
             <main role="main" class="inner cover">
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="img/miku.png">
+                        <img src="img/linkedIn.png">
                     </div>
 
                     <div class="col-md-6" style="margin-top: 5%; text-align: left;">
                         <h1 class="cover-heading" th:text="${name}"/>
                         <p class="lead" th:text="'Email: '+${mail}"/>
                         <p class="lead" th:text="'Phone: '+${phone}"/>
+                        <p class="lead" th:text="'Skills: '+${skills}"/>
                     </div>
                 </div>
             </main>
-
-            <footer class="mastfoot">
-                <div class="inner">
-                    <p>Example Page for <a href="https://github.com/DiUS/pact-jvm">Pact JVM</a>.</p>
-                </div>
-            </footer>
-
         </div>
 
     </div>

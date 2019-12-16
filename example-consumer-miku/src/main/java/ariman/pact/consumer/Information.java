@@ -7,7 +7,14 @@ public class Information {
     private Integer salary;
     private String name;
     private String nationality;
+    private String skills;
     private Map<String, String> contact = new HashMap<String, String>();
+
+    public String getSkills() { return this.skills; }
+
+    public void setSkills(String skills) {
+        this.skills = skills;
+    }
 
     public Integer getSalary() {
         return salary;

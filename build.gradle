@@ -74,8 +74,6 @@ project(':example-consumer-nanoha') {
     }
 }
 
-import java.net.URL
-
 project(':example-provider') {
     apply plugin: 'au.com.dius.pact'
 
@@ -93,29 +91,15 @@ project(':example-provider') {
                 path = '/'
 
                 // Test Pacts from local Miku
-                hasPactWith('Miku - Base contract') {
-                    pactSource = file("$rootDir/Pacts/Miku/BaseConsumer-ExampleProvider.json")
-                }
+
 
                 hasPactsWith('Miku - All contracts') {
                     pactFileLocation = file("$rootDir/Pacts/Miku")
                 }
 
-                // Test Pacts from Pact Broker
-                hasPactsFromPactBroker(mybrokerUrl, authentication: ['Basic', mybrokerUser, mybrokerPassword])
-
-                // This is for local Pact Broker in Docker
-                //hasPactsFromPactBroker("http://localhost")
-
-                // Test Pacts from local Nanoha
-//                hasPactWith('Nanoha - With Nantionality') {
-//                    pactSource = file("$rootDir/Pacts/Nanoha/ConsumerNanohaWithNationality-ExampleProvider.json")
-//                }
-
-//                hasPactWith('Nanoha - No Nantionality') {
-//                    stateChangeUrl = new URL('http://localhost:8080/pactStateChange')
-//                    pactSource = file("$rootDir/Pacts/Nanoha/ConsumerNanohaNoNationality-ExampleProvider.json")
-//                }
+                hasPactsWith('Nanoha - All contracts') {
+                    pactFileLocation = file("$rootDir/Pacts/Miku")
+                }
 
             }
         }
