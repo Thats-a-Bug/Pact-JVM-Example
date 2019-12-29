@@ -52,6 +52,7 @@ public class FacebookContractTest
                 o.stringType("name");
                 o.stringType("age");
                 o.stringType("relatives");
+                o.stringType("city");
             }
         ).build();
     }
@@ -71,7 +72,8 @@ public class FacebookContractTest
             .contentType(MediaType.APPLICATION_JSON_VALUE)
             .body("name", any(String.class))
             .body("age", any(String.class))
-            .body("relatives", any(String.class));
+            .body("relatives", any(String.class))
+            .body("city", any(String.class));
 
     }
 }

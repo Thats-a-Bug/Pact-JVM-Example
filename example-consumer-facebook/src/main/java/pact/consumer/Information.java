@@ -7,5 +7,5 @@ public class Information {
     @Getter @Setter private String name;
     @Getter @Setter private String relatives;
     @Getter @Setter private String age;
-
+    @Getter @Setter private String city;
 }

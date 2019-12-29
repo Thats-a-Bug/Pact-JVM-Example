@@ -17,6 +17,7 @@ public class InformationController {
         model.addAttribute("name", information.getName());
         model.addAttribute("age", information.getAge());
         model.addAttribute("relatives", information.getRelatives());
+        model.addAttribute("city", information.getCity());
 
         return "facebook";
     }

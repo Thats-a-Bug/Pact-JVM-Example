@@ -24,6 +24,7 @@ public class InformationController {
         information.setAge("24");
         information.setRelatives("Harold SquarePants; Margaret SquarePants");
         information.setName("SpongeBob SquarePants");
+        information.setCity("Bikini Valley");
         return information;
     }
 

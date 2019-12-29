@@ -26,6 +26,7 @@
           "Content-Type": "application/json; charset\u003dUTF-8"
         },
         "body": {
+          "city": "string",
           "name": "string",
           "relatives": "string",
           "age": "string"
@@ -49,6 +50,14 @@
               "combine": "AND"
             },
             "$.relatives": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.city": {
               "matchers": [
                 {
                   "match": "type"
@@ -80,6 +89,10 @@
               "size": 20
             },
             "$.relatives": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.city": {
               "type": "RandomString",
               "size": 20
             }

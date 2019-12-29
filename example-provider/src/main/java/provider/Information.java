@@ -11,5 +11,6 @@ public class Information {
     @Getter @Setter private Map<String, String> contact = new HashMap<String, String>();
     @Getter @Setter private String age;
     @Getter @Setter private String relatives;
+    @Getter @Setter private String city;
 
 }
