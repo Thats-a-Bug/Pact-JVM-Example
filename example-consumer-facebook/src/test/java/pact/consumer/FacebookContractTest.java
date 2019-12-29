@@ -49,7 +49,7 @@ public class FacebookContractTest
     {
         return LambdaDsl.newJsonBody(
             (o) -> {
-                o.stringType("name");
+                o.stringType("fullName");
                 o.stringType("age");
                 o.stringType("relatives");
                 o.stringType("city");
@@ -70,7 +70,7 @@ public class FacebookContractTest
 
         response.then().assertThat()
             .contentType(MediaType.APPLICATION_JSON_VALUE)
-            .body("name", any(String.class))
+            .body("fullName", any(String.class))
             .body("age", any(String.class))
             .body("relatives", any(String.class))
             .body("city", any(String.class));

@@ -27,13 +27,13 @@
         },
         "body": {
           "city": "string",
-          "name": "string",
+          "fullName": "string",
           "relatives": "string",
           "age": "string"
         },
         "matchingRules": {
           "body": {
-            "$.name": {
+            "$.fullName": {
               "matchers": [
                 {
                   "match": "type"
@@ -80,7 +80,7 @@
         },
         "generators": {
           "body": {
-            "$.name": {
+            "$.fullName": {
               "type": "RandomString",
               "size": 20
             },

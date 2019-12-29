@@ -15,9 +15,8 @@ public class InformationController {
     public String linkedin(Model model) {
         Information information = providerService.getInformation();
         model.addAttribute("skills", information.getSkills());
-        model.addAttribute("name", information.getName());
+        model.addAttribute("fullName", information.getFullName());
         model.addAttribute("email", information.getContact().get("email"));
-        model.addAttribute("phone", information.getContact().get("phone"));
 
         return "linkedin";
     }

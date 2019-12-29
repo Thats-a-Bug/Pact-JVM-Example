@@ -28,14 +28,13 @@
         "body": {
           "skills": "string",
           "contact": {
-            "phone": "string",
             "email": "string"
           },
-          "name": "string"
+          "fullName": "string"
         },
         "matchingRules": {
           "body": {
-            "$.name": {
+            "$.fullName": {
               "matchers": [
                 {
                   "match": "type"
@@ -52,14 +51,6 @@
               "combine": "AND"
             },
             "$.contact.email": {
-              "matchers": [
-                {
-                  "match": "type"
-                }
-              ],
-              "combine": "AND"
-            },
-            "$.contact.phone": {
               "matchers": [
                 {
                   "match": "type"
@@ -82,7 +73,7 @@
         },
         "generators": {
           "body": {
-            "$.name": {
+            "$.fullName": {
               "type": "RandomString",
               "size": 20
             },
@@ -91,10 +82,6 @@
               "size": 20
             },
             "$.contact.email": {
-              "type": "RandomString",
-              "size": 20
-            },
-            "$.contact.phone": {
               "type": "RandomString",
               "size": 20
             }

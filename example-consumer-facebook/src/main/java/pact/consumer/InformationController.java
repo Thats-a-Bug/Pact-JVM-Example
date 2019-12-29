@@ -14,7 +14,7 @@ public class InformationController {
     @RequestMapping("/facebook")
     public String facebook(Model model) {
         Information information = providerService.getInformation();
-        model.addAttribute("name", information.getName());
+        model.addAttribute("fullName", information.getFullName());
         model.addAttribute("age", information.getAge());
         model.addAttribute("relatives", information.getRelatives());
         model.addAttribute("city", information.getCity());

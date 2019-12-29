@@ -49,11 +49,10 @@ public class LinkedInContractTest
     {
         return LambdaDsl.newJsonBody(
             (o) -> {
-                o.stringType("name");
+                o.stringType("fullName");
                 o.stringType("skills");
                 o.object("contact", (contact) -> {
                     contact.stringType("email");
-                    contact.stringType("phone");
                 });
             }
         ).build();
@@ -72,9 +71,8 @@ public class LinkedInContractTest
 
         response.then().assertThat()
             .contentType(MediaType.APPLICATION_JSON_VALUE)
-            .body("name", any(String.class))
+            .body("fullName", any(String.class))
             .body("skills", any(String.class))
-            .body("contact.email", any(String.class))
-            .body("contact.phone", any(String.class));
+            .body("contact.email", any(String.class));
     }
 }
