@@ -32,9 +32,9 @@ public class InformationController {
     {
         Information information = new Information();
         Map<String, String> contact = new HashMap<>();
-        contact.put("Email", "spongebob@squarepants.com");
-        contact.put("Phone Number", "9090950");
-        information.setSkills("Complex Quantum-Physis; Cooking; Philanthropy");
+        contact.put("email", "spongebob@squarepants.com");
+        contact.put("phone", "9090950");
+        information.setSkills("Complex Quantum Mechanics; Cooking; Philanthropy");
         information.setContact(contact);
         information.setName("SpongeBob SquarePants PhD");
         return information;

@@ -16,8 +16,8 @@ public class InformationController {
         Information information = providerService.getInformation();
         model.addAttribute("skills", information.getSkills());
         model.addAttribute("name", information.getName());
-        model.addAttribute("mail", information.getContact().get("Email"));
-        model.addAttribute("phone", information.getContact().get("Phone Number"));
+        model.addAttribute("email", information.getContact().get("email"));
+        model.addAttribute("phone", information.getContact().get("phone"));
 
         return "linkedin";
     }

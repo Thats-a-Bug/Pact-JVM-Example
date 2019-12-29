@@ -25,7 +25,9 @@ public class LinkedInContractTest
     private final String informationURI = "/information";
 
     @Rule
-    public PactProviderRule mockProvider = new PactProviderRule("userinfo", "localhost", 9000, PactSpecVersion.V3, this);
+    public PactProviderRule mockProvider = new PactProviderRule(
+        "userinfo", "localhost", 9000,
+        PactSpecVersion.V3, this);
 
     @Pact(consumer = "linkedin")
     public RequestResponsePact linkedinInfoPact(final PactDslWithProvider builder)
@@ -49,6 +51,10 @@ public class LinkedInContractTest
             (o) -> {
                 o.stringType("name");
                 o.stringType("skills");
+                o.object("contact", (contact) -> {
+                    contact.stringType("email");
+                    contact.stringType("phone");
+                });
             }
         ).build();
     }
@@ -67,6 +73,8 @@ public class LinkedInContractTest
         response.then().assertThat()
             .contentType(MediaType.APPLICATION_JSON_VALUE)
             .body("name", any(String.class))
-            .body("skills", any(String.class));
+            .body("skills", any(String.class))
+            .body("contact.email", any(String.class))
+            .body("contact.phone", any(String.class));
     }
 }

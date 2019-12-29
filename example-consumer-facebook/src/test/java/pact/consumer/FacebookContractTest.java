@@ -25,7 +25,9 @@ public class FacebookContractTest
     private final String informationURI = "/information";
 
     @Rule
-    public PactProviderRule mockProvider = new PactProviderRule("userinfo", "localhost", 9000, PactSpecVersion.V3, this);
+    public PactProviderRule mockProvider = new PactProviderRule(
+        "userinfo", "localhost", 9000,
+        PactSpecVersion.V3, this);
 
     @Pact(consumer = "facebook")
     public RequestResponsePact facebookInfoPact(final PactDslWithProvider builder)

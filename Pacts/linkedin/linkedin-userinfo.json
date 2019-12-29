@@ -27,6 +27,10 @@
         },
         "body": {
           "skills": "string",
+          "contact": {
+            "phone": "string",
+            "email": "string"
+          },
           "name": "string"
         },
         "matchingRules": {
@@ -40,6 +44,22 @@
               "combine": "AND"
             },
             "$.skills": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.contact.email": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.contact.phone": {
               "matchers": [
                 {
                   "match": "type"
@@ -67,6 +87,14 @@
               "size": 20
             },
             "$.skills": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.contact.email": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.contact.phone": {
               "type": "RandomString",
               "size": 20
             }
