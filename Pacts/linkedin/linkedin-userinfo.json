@@ -1,0 +1,86 @@
+{
+  "provider": {
+    "name": "userinfo"
+  },
+  "consumer": {
+    "name": "linkedin"
+  },
+  "interactions": [
+    {
+      "description": "Get linkedin info",
+      "request": {
+        "method": "GET",
+        "path": "/information",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "query": {
+          "name": [
+            "linkedin"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset\u003dUTF-8"
+        },
+        "body": {
+          "skills": "string",
+          "name": "string"
+        },
+        "matchingRules": {
+          "body": {
+            "$.name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.skills": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            }
+          },
+          "header": {
+            "Content-Type": {
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "application/json(;\\s?charset\u003d[\\w\\-]+)?"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        },
+        "generators": {
+          "body": {
+            "$.name": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.skills": {
+              "type": "RandomString",
+              "size": 20
+            }
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.0.3"
+    }
+  }
+}

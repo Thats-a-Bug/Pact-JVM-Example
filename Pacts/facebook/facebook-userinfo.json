@@ -1,0 +1,99 @@
+{
+  "provider": {
+    "name": "userinfo"
+  },
+  "consumer": {
+    "name": "facebook"
+  },
+  "interactions": [
+    {
+      "description": "Get facebook info",
+      "request": {
+        "method": "GET",
+        "path": "/information",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "query": {
+          "name": [
+            "facebook"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset\u003dUTF-8"
+        },
+        "body": {
+          "name": "string",
+          "relatives": "string",
+          "age": "string"
+        },
+        "matchingRules": {
+          "body": {
+            "$.name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.age": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.relatives": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            }
+          },
+          "header": {
+            "Content-Type": {
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "application/json(;\\s?charset\u003d[\\w\\-]+)?"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        },
+        "generators": {
+          "body": {
+            "$.name": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.age": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.relatives": {
+              "type": "RandomString",
+              "size": 20
+            }
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.0.3"
+    }
+  }
+}

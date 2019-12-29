@@ -32,26 +32,30 @@ subprojects {
       testImplementation("junit:junit")
       testImplementation("au.com.dius:pact-jvm-consumer-junit:4.0.3")
       testImplementation("au.com.dius:pact-jvm-consumer-java8:4.0.3")
+      compileOnly 'org.projectlombok:lombok:1.18.10'
+      annotationProcessor 'org.projectlombok:lombok:1.18.10'
+      compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1.1'
+      testCompile group: 'io.rest-assured', name: 'rest-assured', version: '4.1.2'
   }
 
 }
 
-project(':example-consumer-miku') {
+project(':example-consumer-linkedin') {
     version '1.0.0'
     apply plugin: 'au.com.dius.pact'
 
     jar {
-        archiveBaseName = 'example-consumer-miku'
+        archiveBaseName = 'example-consumer-linkedin'
         archiveVersion =  '1.0.0'
     }
 
     test {
-        systemProperties['pact.rootDir'] = "$rootDir/Pacts/Miku"
+        systemProperties['pact.rootDir'] = "$rootDir/Pacts/linkedin"
     }
 
     pact {
         publish {
-            pactDirectory = "$rootDir/Pacts/Miku"
+            pactDirectory = "$rootDir/Pacts/linkedin"
 
             pactBrokerUrl = mybrokerUrl
             pactBrokerUsername = mybrokerUser
@@ -63,18 +67,16 @@ project(':example-consumer-miku') {
     }
 }
 
-project(':example-consumer-nanoha') {
+project(':example-consumer-facebook') {
     jar {
-        archiveBaseName = 'example-consumer-nanoha'
+        archiveBaseName = 'example-consumer-facebook'
         archiveVersion =  '1.0.0'
     }
 
     test {
-        systemProperties['pact.rootDir'] = "$rootDir/Pacts/Nanoha"
+        systemProperties['pact.rootDir'] = "$rootDir/Pacts/facebook"
     }
 }
-
-import java.net.URL
 
 project(':example-provider') {
     apply plugin: 'au.com.dius.pact'
@@ -92,30 +94,14 @@ project(':example-provider') {
                 port = 8080
                 path = '/'
 
-                // Test Pacts from local Miku
-                hasPactWith('Miku - Base contract') {
-                    pactSource = file("$rootDir/Pacts/Miku/BaseConsumer-ExampleProvider.json")
+                // Test Pacts from local linkedin
+                hasPactsWith('LinkedIn - All contracts') {
+                    pactFileLocation = file("$rootDir/Pacts/linkedin")
                 }
 
-                hasPactsWith('Miku - All contracts') {
-                    pactFileLocation = file("$rootDir/Pacts/Miku")
+                hasPactsWith('Facebook - All contracts') {
+                    pactFileLocation = file("$rootDir/Pacts/facebook")
                 }
-
-                // Test Pacts from Pact Broker
-                hasPactsFromPactBroker(mybrokerUrl, authentication: ['Basic', mybrokerUser, mybrokerPassword])
-
-                // This is for local Pact Broker in Docker
-                //hasPactsFromPactBroker("http://localhost")
-
-                // Test Pacts from local Nanoha
-//                hasPactWith('Nanoha - With Nantionality') {
-//                    pactSource = file("$rootDir/Pacts/Nanoha/ConsumerNanohaWithNationality-ExampleProvider.json")
-//                }
-
-//                hasPactWith('Nanoha - No Nantionality') {
-//                    stateChangeUrl = new URL('http://localhost:8080/pactStateChange')
-//                    pactSource = file("$rootDir/Pacts/Nanoha/ConsumerNanohaNoNationality-ExampleProvider.json")
-//                }
 
             }
         }
