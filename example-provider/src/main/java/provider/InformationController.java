@@ -10,25 +10,11 @@ public class InformationController {
 
     @RequestMapping("/information")
     public Information information(@RequestParam(value="name", defaultValue="linkedin") String name) {
-        if ("facebook".equals(name))
-        {
-            return getFacebookData();
-        }
-        return getLinkedInData();
+        return getSpongeBobData();
     }
 
 
-    private Information getFacebookData()
-    {
-        Information information = new Information();
-        information.setAge("24");
-        information.setRelatives("Harold SquarePants; Margaret SquarePants");
-        information.setName("SpongeBob SquarePants");
-        return information;
-    }
-
-
-    private Information getLinkedInData()
+    private Information getSpongeBobData()
     {
         Information information = new Information();
         Map<String, String> contact = new HashMap<>();
@@ -36,7 +22,10 @@ public class InformationController {
         contact.put("phone", "9090950");
         information.setSkills("Complex Quantum Mechanics; Cooking; Philanthropy");
         information.setContact(contact);
-        information.setName("SpongeBob SquarePants PhD");
+        information.setName("SpongeBob SquarePants");
+        information.setCredentials("PhD");
+        information.setAge("24");
+        information.setRelatives("Harold SquarePants; Margaret SquarePants");
         return information;
     }
 }
