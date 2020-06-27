@@ -11,12 +11,9 @@
       "request": {
         "method": "GET",
         "path": "/information",
-        "headers": {
-          "Content-Type": "application/json"
-        },
         "query": {
           "name": [
-            "facebook"
+            "bob"
           ]
         }
       },

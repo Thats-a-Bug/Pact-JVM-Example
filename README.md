@@ -913,7 +913,7 @@ understand, especially for a some testers who are not familiar to Spring Boot ap
 So to make the breaking simple, let's just force Provider returns `null` as the value to `.name` to all consumers, this can be easily done by 
 adding only a single line:
 
-`provider.InformationController`
+`InformationController`
 ```java
 @RestController
 public class InformationController {

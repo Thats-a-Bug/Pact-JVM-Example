@@ -36,8 +36,7 @@ public class FacebookContractTest
             .uponReceiving("Get facebook info")
             .path(informationURI)
             .method(HttpMethod.GET)
-            .query("name=facebook")
-            .headers("Content-Type", MediaType.APPLICATION_JSON_VALUE)
+            .query("name=bob")
             .willRespondWith()
             .status(HttpStatus.OK.value())
             .body(getFacebookInfoResponse())
@@ -64,7 +63,7 @@ public class FacebookContractTest
             .given()
             .port(mockProvider.getConfig().getPort())
             .contentType(ContentType.JSON)
-            .queryParam("name", "facebook")
+            .queryParam("name", "bob")
             .get(informationURI);
 
         response.then().assertThat()

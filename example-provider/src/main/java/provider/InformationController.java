@@ -13,7 +13,6 @@ public class InformationController {
         return getSpongeBobData();
     }
 
-
     private Information getSpongeBobData()
     {
         Information information = new Information();

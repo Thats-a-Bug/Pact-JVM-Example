@@ -36,7 +36,7 @@ public class LinkedInContractTest
             .uponReceiving("Get linkedin info")
             .path(informationURI)
             .method(HttpMethod.GET)
-            .query("name=linkedin")
+            .query("name=bob")
             .headers("Content-Type", MediaType.APPLICATION_JSON_VALUE)
             .willRespondWith()
             .status(HttpStatus.OK.value())
@@ -67,7 +67,7 @@ public class LinkedInContractTest
             .given()
             .port(mockProvider.getConfig().getPort())
             .contentType(ContentType.JSON)
-            .queryParam("name", "linkedin")
+            .queryParam("name", "bob")
             .get(informationURI);
 
         response.then().assertThat()
